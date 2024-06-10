@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Script</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" type="image/png" href="./all/avata.jpg">
+</head>
+<header>
+    <form>
+        <div class="topbar">
+            <div class="home">
+                <a href="./index.html">Home</a>
+            </div>
+            <div class="getscript">
+                <a href="./getscript.html">Get Script</a>
+            </div>
+        </div>
+        <div class="info">
+            <div class="avata">
+                <img src="./all/avata.jpg">
+            </div>
+        </div>
+        <div class="name">
+            <h1>Anh là Quý
+                <img src="./all/tick.png" height="35px">
+            </h1>
+            
+        </div>
+        <p>No skill? Using my script now</p>
+        <div class="noname">
+            <div class="gach"></div>
+        </div>
+    </form>
+</header>
+
+<body>
+    <h2>Thank You for using my script <3 </h2>
+    <div id="getscript">
+        <div class="text">
+            <textarea id="textToCopy" rows="4" cols="50">loadstring(game:HttpGet("https://raw.githubusercontent.com/menucathub/MENUCATV0.1SCRIPT/main/catmenu.lua"))()</textarea>
+        </div>
+        <div class="copybtn">
+            <button id="copyButton">Click to copy</button>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const copyButton = document.getElementById('copyButton');
+        const textToCopy = document.getElementById('textToCopy');
+
+        copyButton.addEventListener('click', function () {
+            textToCopy.select();
+            textToCopy.setSelectionRange(0, 99999); // For mobile devices
+
+            navigator.clipboard.writeText(textToCopy.value)
+                .then(() => {
+                    alert('Copied | thank you for using my script');
+                })
+                .catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+        });
+    });
+</script>
+
+</html>
